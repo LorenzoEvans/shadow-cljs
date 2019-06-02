@@ -12,7 +12,7 @@
  ; Tells shadow-cljs to serve the folder target/ on port 8080.
  ; builds is where you specify build configurations.
            ; portfolio_app is a build id we chose.
- :builds {:portfolio_app {:output-dir "target/"
+ :builds {:portfolio-app {:output-dir "target/"
                           ; out-put dir decides where generated files are written.
                           :asset-path "."
                           ; base path to files with hot updated code.
