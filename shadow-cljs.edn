@@ -1,17 +1,25 @@
-;; shadow-cljs configuration
+; shadow-cljs configuration
 {:source-paths
+ ;source-paths gets pointed toward source code.
  ["src/dev"
   "src/main"
   "src/test"]
 
  :dependencies
+ ; Clojure(script) dependencies go here.
  []
  :dev-http {4040 "target"}
-
+ ; Tells shadow-cljs to serve the folder target/ on port 8080.
+ ; builds is where you specify build configurations.
+           ; portfolio_app is a build id we chose.
  :builds {:portfolio_app {:output-dir "target/"
+                          ; out-put dir decides where generated files are written.
                           :asset-path "."
+                          ; base path to files with hot updated code.
                           :target :browser
+                          ; target <= compilation-target, browser is an option for web-apps.
                           :modules {:main {:init-fn portfolio_app.main/main!}}
+                          ; specifies modules to be generated, :main <= main.js
                           :devtools {:after-load app.main/reload!
                                      :http-root "target"
                                      :http-port 4040}}}}
