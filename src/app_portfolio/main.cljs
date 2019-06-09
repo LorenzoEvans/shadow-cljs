@@ -1,4 +1,4 @@
-(ns portfolio_app.front_end.app)
+(ns main)
 
 (def value 9)
 
